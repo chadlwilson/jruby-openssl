@@ -1,3 +1,8 @@
+## 0.19.2.dev
+
+- [deps] upgrade BC to version 1.86
+  discussion: https://github.com/bcgit/bc-java/discussions/2449
+
 ## 0.19.1
 
 X25519/X448 key support and DH key reading, and a (final) round of provider 

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 module JOpenSSL
   VERSION = '0.19.2.dev'
-  BOUNCY_CASTLE_VERSION = '1.85'
+  BOUNCY_CASTLE_VERSION = '1.86'
 
   # @private
   BOUNCY_CASTLE_PATCH_VERSIONS = {
-    'bcprov-jdk18on' => "#{BOUNCY_CASTLE_VERSION}.2"
+    'bcprov-jdk18on' => BOUNCY_CASTLE_VERSION
   }.freeze
   private_constant :BOUNCY_CASTLE_PATCH_VERSIONS
 
