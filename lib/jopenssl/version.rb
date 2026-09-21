@@ -2,10 +2,11 @@
 module JOpenSSL
   VERSION = '0.19.2.dev'
   BOUNCY_CASTLE_VERSION = '1.86'
+  BOUNCY_CASTLE_BCPROV_PATCH_VERSION = nil
 
   # @private
   BOUNCY_CASTLE_PATCH_VERSIONS = {
-    'bcprov-jdk18on' => '1.86'
+    'bcprov-jdk18on' => [BOUNCY_CASTLE_VERSION, BOUNCY_CASTLE_BCPROV_PATCH_VERSION].compact.join('.')
   }.freeze
   private_constant :BOUNCY_CASTLE_PATCH_VERSIONS
 
