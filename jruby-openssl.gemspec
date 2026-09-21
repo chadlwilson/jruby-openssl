@@ -37,7 +37,10 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.5.0' # JRuby >= 9.2
 
-  version_range = lambda { |artifact_id| "[1.80,#{jopenssl.version(artifact_id)}]" }
+  version_range = lambda do |artifact_id|
+    major, minor = Gem::Version.new(jopenssl.version(artifact_id)).segments.first(2)
+    "[1.80,#{major}.#{minor + 1})"
+  end
   s.requirements << "jar org.bouncycastle:bcprov-jdk18on, #{version_range.('bcprov-jdk18on')}" # Provider
   s.requirements << "jar org.bouncycastle:bcpkix-jdk18on, #{version_range.('bcpkix-jdk18on')}" # PKIX/CMS/EAC/PKCSOCSP/TSP/OPENSSL
   s.requirements << "jar org.bouncycastle:bctls-jdk18on,  #{version_range.('bctls-jdk18on')}"  # DTLS/TLS API/JSSE Provider
