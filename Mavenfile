@@ -82,7 +82,7 @@ plugin :clean do
                  'failOnError' =>  'false' )
 end
 
-jruby_compile_compat = '9.2.1.0'
+jruby_compile_compat = '9.3.15.0'
 jar 'org.jruby:jruby-core', jruby_compile_compat, :scope => :provided
 # for invoker generated classes we need to add javax.annotation when on Java > 8
 jar 'javax.annotation:javax.annotation-api', '1.3.1', :scope => :compile
@@ -92,9 +92,7 @@ jar 'org.jruby:jruby-stdlib', jruby_compile_compat, :scope => :test
 
 plugin :surefire, '3.5.5'
 
-# NOTE: to build on Java 11 - installing gems fails (due old jossl) with:
-#  load error: jopenssl/load -- java.lang.StringIndexOutOfBoundsException
-MVN_JRUBY_VERSION = '9.2.19.0'
+MVN_JRUBY_VERSION = '9.3.15.0'
 
 jruby_plugin! :gem do
   # when installing dependent gems we want to use the built in openssl not the one from this lib directory
@@ -153,7 +151,6 @@ invoker_run_options = {
 }
 
 jruby_versions = []
-jruby_versions += %w{ 9.2.19.0 9.2.20.1 }
 jruby_versions += %w{ 9.3.3.0 9.3.13.0 }
 jruby_versions += %w{ 9.4.8.0 9.4.14.0 }
 jruby_versions += %w{ 10.0.2.0 }

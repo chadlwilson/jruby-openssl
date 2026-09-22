@@ -19,12 +19,6 @@ jobs:
         include:
           - java-version: 8
             distribution: temurin
-            ruby-version: jruby-9.2.19.0
-          - java-version: 11
-            distribution: temurin
-            ruby-version: jruby-9.2.20.1
-          - java-version: 8
-            distribution: temurin
             ruby-version: jruby-9.3.3.0
           - java-version: 11
             distribution: temurin
